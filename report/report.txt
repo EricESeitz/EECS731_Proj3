@@ -31,5 +31,17 @@ I concatenated tags by movieId, with a '|' seperator to match the 'Genre' column
 Now that I have average user reviews and tags matched along with Movies, I think I can start with the clustering models
 
 ------------------------------------------------------------------------------------------------------------------
-
+"Build one or more clustering models to determine similar movies to recommend using the other ratings and tags of movies by other users as features"
 Clustering Model ideas:
+K-Means
+K-means seems like a good starting point, clustering data via tags on a scale of ratings would be my first guess 
+However I'm not sure how I could include genre as a useful datapoint with K-means of tags and rating 
+
+To build the K-means map:
+X axis: Rating, 0.0-5.0
+Y axis: Number of ratings, 1-? (find max later)
+
+I need to find the unique tags and max number of ratings
+- uniqueTags contains all the tags from 'Tags' that can be searched for
+- According to movies['NumRating'].max, the max number of ratings for a movie is 10. So for my Y-axis I'll use 15 just for some breathing room
+
