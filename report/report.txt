@@ -1,0 +1,9 @@
+Setup:
+
+I downloaded the 'small' educational dataset from https://grouplens.org/datasets/movielens/ as specified in the project steps.
+
+4 .csv files were included. movies, links, tags, and ratings.
+From looking at the data, it looks like movie-id is how information is kept about which movie is being talked about.
+
+"Formulate one or two ideas on how the combination of ratings and tags by users helps the data set to establish additional value using exploratory data analysis"
+
