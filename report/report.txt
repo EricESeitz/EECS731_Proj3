@@ -5,5 +5,31 @@ I downloaded the 'small' educational dataset from https://grouplens.org/datasets
 4 .csv files were included. movies, links, tags, and ratings.
 From looking at the data, it looks like movie-id is how information is kept about which movie is being talked about.
 
-"Formulate one or two ideas on how the combination of ratings and tags by users helps the data set to establish additional value using exploratory data analysis"
+------------------------------------------------------------------------------------------------------------------
 
+"Formulate one or two ideas on how the combination of ratings and tags by users helps the data set to establish additional value using exploratory data analysis"
+Ideas:
+- Movies with similar tags (e.g: 'funny', 'horror', 'classic', etc) would probably suit similar tastes.
+  Movies highly rated by users are probably appealing to the broadest demographic. 
+  Similar tags + well rated should make for a decent movie recommendation. 
+- Genre might also be important. Comedy/action/romance etc. If someone likes comedies then a comedy recommendation sounds obvious.
+
+How should I implement clustering models?
+Maybe make a 'combined' data set with the movie's average rating attached to each movieID, I'm not sure how tags should be handled though. Concatenated to all one string?
+
+------------------------------------------------------------------------------------------------------------------
+
+Data Processing:
+First I want to calculate the average user review per movie ID. I did this in Jupyter notebooks and saved to a new dataframe.
+
+I basically went through the 'Movies' dataframe and for each movieID, I querried the 'ratings' dataframe for the average of the user review per ID
+I also wanted to store the number of ratings, this might be useful info. 
+
+Next I want to include tags with the movies, this will involve concatenating strings I believe.
+I concatenated tags by movieId, with a '|' seperator to match the 'Genre' column already present in the 'Movies' dataframe
+
+Now that I have average user reviews and tags matched along with Movies, I think I can start with the clustering models
+
+------------------------------------------------------------------------------------------------------------------
+
+Clustering Model ideas:
