@@ -45,3 +45,6 @@ I need to find the unique tags and max number of ratings
 - uniqueTags contains all the tags from 'Tags' that can be searched for
 - According to movies['NumRating'].max, the max number of ratings for a movie is 10. So for my Y-axis I'll use 15 just for some breathing room
 
+While building the K-means map, I had to check for missing values as I missed this step above.
+I ended up finding a small number of movies missing their "Average rating" as they had no ratings before. I added in a value of 0.0 as movies with no ratings should be low priority
+
