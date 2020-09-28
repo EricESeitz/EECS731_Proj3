@@ -31,6 +31,7 @@ I concatenated tags by movieId, with a '|' seperator to match the 'Genre' column
 Now that I have average user reviews and tags matched along with Movies, I think I can start with the clustering models
 
 ------------------------------------------------------------------------------------------------------------------
+
 "Build one or more clustering models to determine similar movies to recommend using the other ratings and tags of movies by other users as features"
 Clustering Model ideas:
 K-Means
@@ -45,6 +46,28 @@ I need to find the unique tags and max number of ratings
 - uniqueTags contains all the tags from 'Tags' that can be searched for
 - According to movies['NumRating'].max, the max number of ratings for a movie is 10. So for my Y-axis I'll use 15 just for some breathing room
 
+Following this website: 
+https://www.datacamp.com/community/tutorials/k-means-clustering-python
+
 While building the K-means map, I had to check for missing values as I missed this step above.
 I ended up finding a small number of movies missing their "Average rating" as they had no ratings before. I added in a value of 0.0 as movies with no ratings should be low priority
+
+Using train.info() to see information on the training data I see a mix of numeric and string values. 
+Certain values like title and genre aren't terribly important right now as we're focusing on average user reviews and tags
+I think I'll be dropping title and genre in the training data and label encoding the tags to a numerical unit 
+
+With the data cleaned and prepared we can begin building our k-means model per the website
+
+After building our k-means with 10 clusters, the first go-around yields an accuracy of 13%, not what I would call impressive.
+
+After adding a scaler to help the fit we got an accuracy of 38%, better than the original by a considerable percentage
+
+I tried plotting the result by avg. rating x number of ratings but I'm not confident in the plot itself, seems like the X axis might not be correct or is
+automatically being labeled incorrectly. 
+
+------------------------------------------------------------------------------------------------------------------
+
+Result:
+I'm not terribly happy but I'm pleased that I managed to get further in this project then last time. I actually got some K-means calculations going and even managed to get a plot made! 
+Not exactly ground-breaking stuff but it's improvement. Hopefully this next project will see even more improvement.
 
